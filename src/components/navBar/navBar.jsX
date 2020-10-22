@@ -4,7 +4,6 @@ class NavBar extends Component { //cc
   
     render() { 
         return ( 
-            
             <div className="test">Nav maenu will be here</div>
          );
     }
