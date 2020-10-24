@@ -2,14 +2,14 @@ import React, { Component } from 'react';//imrc
 class QuantityPicker extends Component { //cc  
     state = { 
         quantity:1,
-        minimmum:1,
+        minimum: this.props.minimum,
     };
     render() { 
         return ( 
             // <React.Fragment>
             <div className="quantityPicker">
                 <button 
-                    disabled={ this.state.quantity === this.state.minimmum }
+                    disabled={ this.state.quantity === this.state.minimum }
                     onClick={this.decrease} 
                     className="btn btn-sm btn-info"
                >
@@ -25,13 +25,15 @@ class QuantityPicker extends Component { //cc
         let current = this.state.quantity;
         current += 1;
         this.setState({ quantity: current });
+        this.props.onValueChange(current);
     };
 
     decrease = ()  => {
         let current = this.state.quantity;
-        if(current !== this.state.minimmum){
+        if(current !== this.state.minimum){
             current -= 1;
             this.setState({ quantity: current });
+            this.props.onValueChange(current);
         }        
     };
 }
