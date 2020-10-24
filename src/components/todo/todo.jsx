@@ -9,15 +9,18 @@ class Todo extends Component {
     render() { 
         return ( 
             <div>
-                <h5>Simple todo app</h5>
-                <div>
-                    <input type="text" onChange={this.handleTextChange} value={this.state.todoText} placeholder="Todo text"></input>
-                    <button onClick={this.AddText}>Add</button>                
+                 <h5>Simple todo app</h5>
+                <div>              
+                    <div className="form-inline align-items-center">
+                    <input type="text" className="form-control" onChange={this.handleTextChange} value={this.state.todoText} placeholder="Todo text"></input>
+                    <button className="btn btn-small btn-info" onClick={this.AddText}>Add</button>                
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <ul>
-                        {this.state.todos.map((text) => <li key={text}>{text}</li> ) }
+                    <ul className="list-group list-group-flush">
+                        {this.state.todos.map((text) => <li className="list-group-item" key={text}>{text}</li> ) }
                     </ul>
                 </div>
 
@@ -25,7 +28,7 @@ class Todo extends Component {
             </div>
          );
     }
-    
+
     AddText=() => {
         //console.log(this.state.todoText);        
         var todoList =this.state.todos;
