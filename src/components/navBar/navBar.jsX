@@ -14,7 +14,7 @@ class NavBar extends Component { //cc
                     <div className="navbar-nav">
                         
                         <a className="nav-link" href="#">Catalog</a>
-                        <a className="nav-link" href="#">Register</a>                    
+                        <a class="nav-link" href="#">Register</a>                    
                     </div>
                 </div>
              </nav>

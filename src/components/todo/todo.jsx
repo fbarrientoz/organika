@@ -30,15 +30,16 @@ class Todo extends Component {
     }
 
     AddText=() => {
-        //console.log(this.state.todoText);        
-        var todoList =this.state.todos;
+       
+        var todoList = [...this.state.todos];
         todoList.push(this.state.todoText);        
-        this.setState({todos: todoList});
-        this.setState({todoText: ""});        
+        this.setState({todos: todoList, todoText: ""});
+       
     }
     handleTextChange = (event) => {
         this.setState({ todoText: event.target.value });
     } 
+
 }
  
 export default Todo;

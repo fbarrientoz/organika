@@ -1,7 +1,7 @@
 import React, { Component } from 'react';//imrc
 class QuantityPicker extends Component { //cc  
     state = { 
-        quantity:1,
+        quantity:this.props.minimum,
         minimum: this.props.minimum,
     };
     render() { 

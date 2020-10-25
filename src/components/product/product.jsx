@@ -11,7 +11,7 @@ class Product extends Component {
                  <img src={"/products/" + this.props.data.image} alt=""></img>
                 <h4>{this.props.data.title}</h4>  
                 <div className="prices" >
-                    <h5>Total: ${this.props.data.price * this.state.quantity}</h5>
+                    <h5>Total: ${this.getTotal()}</h5>
                     <h6>Price ${this.props.data.price}</h6>
                 </div>  
                 <div className="controls">                    
@@ -23,6 +23,11 @@ class Product extends Component {
          );
     }
 
+ getTotal = () =>
+ {
+     let total = this.props.data.price * this.state.quantity;
+     return total.toFixed(2);
+ };
     handleQuantityChange = (quantity) =>{
         console.log("Qnty changed", quantity);
         this.setState({quantity:quantity});
