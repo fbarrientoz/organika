@@ -53,10 +53,10 @@ class Catalog extends Component {
     console.log(category);
     this.setState({selectedCategory:category});
   }
-  componentDidMount(){
+   async componentDidMount(){
     console.log("Load data here");
     let service = new ProductService();
-    const data = service.getProducts();
+    const data = await service.getProducts();
     this.setState({products: data});
     console.log(data);
 
