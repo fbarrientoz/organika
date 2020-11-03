@@ -1,4 +1,4 @@
-#cartDisplay{
+#cart-display{
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -10,18 +10,23 @@
     margin-left: auto;
     margin-right: auto;
 }
-#cartMain{
+#cart-main{
     display: flex;
     flex-direction: column;
     justify-content: left;
     padding-left: 2rem;
     padding-right: 2rem;
 }
-#cartTotal{
+#cart-main h1, p, h5{
+   font-size: 18px;
+}
+
+
+#cart-total{
     display: flex;
     flex-direction: column;
     justify-content: left;
-    border: 1px solid black;
+    
     padding: 1rem;
 }
 #displayTotal{

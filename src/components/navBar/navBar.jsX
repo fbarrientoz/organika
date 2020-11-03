@@ -47,7 +47,7 @@ class NavBar extends Component { //cc
  
 const mapStateToProps = (state) => {
     return{
-        test: 'this is a test',
+        test: 'View car',
         count: state.cart.length,
     }
 };
