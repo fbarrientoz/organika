@@ -12,3 +12,11 @@ export const incrementCartCounter = () => {
     };
   };
   
+
+export const removeProductInCart = (product) => {
+    return {
+      type: "REMOVE_PRODUCT",
+      payload: product,
+    };
+  };
+  

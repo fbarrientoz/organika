@@ -16,8 +16,11 @@ class Cart extends Component{
 
     render(){
         return(
-        <div className="jumbotron">
-            <h1 className="display-4">Your Grocery Cart</h1>
+        <div>
+            <div className="jumbotron">
+                <h1 className="display-4">Your Cart</h1>                
+            </div>
+        
                 {this.props.cart.map((p) => <ProductinCart data={p} key={p.product.id}></ProductinCart>)}
         </div>
         );
