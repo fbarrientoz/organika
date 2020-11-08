@@ -1,0 +1,41 @@
+#todoHead{
+    padding: 5rem;
+    width: 100%;
+    background-color: #fdfcfc7c;
+
+}
+#todoTitle{
+    color: #4ea84b;
+    font-size: 3rem;
+}
+#todoMessage{
+    font-size: 1rem;
+    color: #085f2c;
+    padding-bottom: 2rem;
+}
+#todoSec{
+    background-color: white;
+    border: 2px solid #c5c5c5;
+}
+input{
+    margin-bottom: 2rem;
+    margin-right: .5rem;
+    filter: drop-shadow(1px 1px 1px #d47e1b);
+}
+.inputField{
+    margin-bottom: 3rem;
+}
+.todoItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dedede;
+}
+.taskName{
+    padding-top: .5rem;
+    padding-left: 1rem;
+    padding-right: 5rem;
+}

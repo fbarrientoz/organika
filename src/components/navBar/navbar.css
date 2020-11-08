@@ -1,7 +1,26 @@
-.test {
 
-    font-size: 14px;
-    font-weight: bold;
-    color: darkblue;
-    
-}
+    .navbar-custom { 
+        background-color: lightgreen; 
+    } 
+    /* Modify brand and text color */ 
+      
+    .navbar-custom .navbar-brand, 
+    .navbar-custom .navbar-text { 
+        color: rgb(1, 109, 1); 
+        font-weight: 700;
+    } 
+
+    .nav-link
+    {
+        color: rgb(1, 109, 1); 
+    }
+
+    .nav-link:hover
+    {
+        color:rgb(48, 112, 48); 
+        background-color: rgb(121, 206, 121); 
+    }
+
+    .btn-cart{
+       background-color: black; 
+    }

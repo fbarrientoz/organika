@@ -1,23 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
-import { Provider} from 'react-redux';
-import rootReducer from './store/reducers';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
+// Import our Root Reducer
+import rootReducer from "./store/reducers";
 
-
+// 1 param should always be the Reducer. Second is 'enhancer': If it contains an extension, then active it.
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
+);
+
 ReactDOM.render(
-  <Provider store = {store}>
+  <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

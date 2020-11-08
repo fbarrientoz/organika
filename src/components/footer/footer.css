@@ -1,6 +1,14 @@
-.test {
+.footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
-    font-size: 14px;
-    font-weight: bold;
-    color: darkbluee;
+.footer li a{
+    color:white;
+}
+
+.footer i
+{
+
+    color:white;
 }

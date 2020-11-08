@@ -1,15 +1,35 @@
 const cartProductsReducer = (state = [], action) => {
-    if (action.type === "ADD_PRODUCT") {
-      var copy = [...state]; //clone state
-      copy.push(action.payload); //modify copy
-      console.log(action.payload);
+  switch (action.type) {
+    case "ADD_PRODUCT":
+      var copy = [...state]; 
+
+      var alreadyThere = false;
+
+    
+      for (let i = 0; i < copy.length; i++) {
+        var p = copy[i];
+
+        if (action.payload.product.id === p.product.id) {
+          p.quantity = action.payload.quantity + p.quantity;
+          alreadyThere = true;
+        }
+      }
+
+    
+      if (!alreadyThere) {
+        copy.push(action.payload);
+      }
+
+    
+
       return copy; // return copy
-    } else if (action.type === "REMOVE_PRODUCT") {
+    case "REMOVE_PRODUCT":
     
       return state.filter((pc) => pc.product.id !== action.payload.product.id);
-    }
-    return state;
-  };
-  
-  export default cartProductsReducer;
-  
+
+    default:
+      return state;
+  }
+};
+
+export default cartProductsReducer;

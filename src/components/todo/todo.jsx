@@ -1,45 +1,81 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import "./todo.css";
+
+
+import { addTodo } from '../../store/actions/actions';
+import { removeTodo } from '../../store/actions/actions';
+
 
 class Todo extends Component {
     state = { 
-        todos: [], 
-        todoText:"" 
-    };
+        todoText: "",
+        id: 0,
+    }
 
     render() { 
         return ( 
-            <div>
-                 <h5>Simple todo app</h5>
-                <div>              
-                    <div className="form-inline align-items-center">
-                    <input type="text" className="form-control" onChange={this.handleTextChange} value={this.state.todoText} placeholder="Todo text"></input>
-                    <button className="btn btn-small btn-info" onClick={this.AddText}>Add</button>                
-                    </div>
-                    
+            <div id="todoHead">
+                <h5 id="todoTitle">Shop list</h5>
+                <h5 id="todoMessage">Add the item?</h5>
+                <div className="inputField">
+                    <input type="text" 
+                    value={this.state.todoText}
+                    onChange={this.handleTextChange} 
+                    placeholder="Todo Task"/>
+                    <button className="btn btn-success" onClick={this.addOnClick}>Add</button>
                 </div>
 
-                <div>
-                    <ul className="list-group list-group-flush">
-                        {this.state.todos.map((text) => <li className="list-group-item" key={text}>{text}</li> ) }
-                    </ul>
+                <div id="todoSec">
+                   
+                        {this.props.todo.map((d) => <div className="todoItem" key={d.id}>
+                            <h5 className="taskName">{d.task}</h5>
+                            <button  onClick={() => this.deleteOnClick(d)} className="btn btn-secondary">Delete Task</button>
+                        </div>
+                        )}
                 </div>
-
-                
             </div>
          );
     }
 
-    AddText=() => {
-       
-        var todoList = [...this.state.todos];
-        todoList.push(this.state.todoText);        
-        this.setState({todos: todoList, todoText: ""});
-       
-    }
     handleTextChange = (event) => {
-        this.setState({ todoText: event.target.value });
-    } 
+        this.setState({todoText: event.target.value});
+    }
 
+
+    addOnClick = () => {
+
+     
+        const todoObj = {
+            task: this.state.todoText,
+            id: this.state.id + 1,
+        };
+
+    
+        this.props.addTodo(todoObj);
+
+        var counter = this.state.id + 1;
+
+        this.setState({ todoText: ""}); 
+        this.setState({ id: counter});
+        
+    }
+    
+
+    deleteOnClick = (todo) => {
+
+   
+        this.props.removeTodo(todo);
+    }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        todo: state.todo 
+    }
+};
  
-export default Todo;
+export default connect(mapStateToProps, { addTodo, removeTodo })(Todo);
+
+

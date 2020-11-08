@@ -1,9 +1,11 @@
-//reducer a simple fn that receives state and action , and reeturn a new state
+
 const cartCounterReducer = (state = 0, action) => {
-    if(action.type === "INCREMENT_COUNTER"){
-        return state + 1;
+
+    if (action.type === "INCREMENT_COUNTER") {
+      return state + 1;
     }
     return state;
-};
-
-export default cartCounterReducer;
+  };
+  
+  export default cartCounterReducer;
+  
